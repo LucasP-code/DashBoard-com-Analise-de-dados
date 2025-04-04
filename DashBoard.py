@@ -6,8 +6,8 @@ import plotly.express as px
 # configurando o layout
 st.set_page_config(layout="wide")
 
-# Carregando o novo dataset
-df = pd.read_csv("car_ad.csv", sep=";", decimal=",")
+# Carregando o novo dataset com codificação especificada
+df = pd.read_csv("car_ad.csv", sep=";", decimal=",", encoding="latin1")
 df["Data"] = pd.to_datetime(df["Data"])
 df = df.sort_values("Data")
 
